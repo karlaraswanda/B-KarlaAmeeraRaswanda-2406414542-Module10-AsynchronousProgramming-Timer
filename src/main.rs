@@ -90,6 +90,22 @@ fn main() {
         println!("Karla's Computer: done!");
     });
 
+    spawner.spawn(async {
+        println!("Karla's Computer: howdy2!");
+
+        TimerFuture::new(Duration::new(2, 0)).await;
+
+        println!("Karla's Computer: done2!");
+    });
+
+    spawner.spawn(async {
+        println!("Karla's Computer: howdy3!");
+
+        TimerFuture::new(Duration::new(2, 0)).await;
+
+        println!("Karla's Computer: done3!");
+    });
+
     println!("Karla's Computer: hey hey");
 
     drop(spawner);
